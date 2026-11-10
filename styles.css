@@ -1,0 +1,550 @@
+/* CORES DO PROJETO */
+:root {
+    --black: #0b0b0f;
+    --panel: #17171f;
+    --red: #e10600;
+    --white: #f5f5f7;
+    --gray: #999999;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONFIGURAÇÃO GERAL */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.secao {
+    padding: 35px 0;
+}
+
+.secao h2 {
+    font-size: 26px;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.secao h2 span {
+    color: var(--red);
+    font-size: 14px;
+}
+
+/* CABEÇALHO */
+.topbar {
+    background: var(--black);
+    border-bottom: 1px solid #292929;
+    padding: 15px 4%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--white);
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    color: var(--red);
+}
+
+.btn-comprar {
+    background: var(--red);
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* BANNER PRINCIPAL */
+.hero {
+    display: flex;
+    min-height: 350px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-conteudo {
+    width: 55%;
+    padding: 40px 4%;
+    z-index: 2;
+}
+
+.subtitulo {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.95;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero-conteudo > p:not(.subtitulo) {
+    color: #cccccc;
+    font-size: 14px;
+    margin: 15px 0;
+    max-width: 400px;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-vermelho,
+.btn-contorno {
+    padding: 12px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-vermelho {
+    background: var(--red);
+}
+
+.btn-contorno {
+    border: 1px solid white;
+}
+
+.hero-imagem {
+    width: 45%;
+    height: 350px;
+    position: relative;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.estatisticas {
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    bottom: 25px;
+    left: 25%;
+    text-align: center;
+    text-shadow: 1px 1px 5px black;
+}
+
+.estatisticas div {
+    display: flex;
+    flex-direction: column;
+}
+
+.estatisticas strong {
+    font-size: 25px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.estatisticas span {
+    font-size: 10px;
+}
+
+/* FAIXA DECORATIVA */
+.kerb {
+    height: 10px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--red) 0 25px,
+        white 25px 50px
+    );
+}
+
+/* GRID DE PILOTOS */
+.grid-pilotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.card-piloto {
+    background: var(--panel);
+    padding: 15px;
+    border-top: 3px solid #777;
+    min-height: 100px;
+}
+
+.card-piloto strong {
+    font-size: 38px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+}
+
+.card-piloto h3 {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.card-piloto p {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.leclerc {
+    border-color: #ed174c;
+}
+
+.leclerc strong {
+    color: #ed174c;
+}
+
+.piastri {
+    border-color: #ff8700;
+}
+
+.piastri strong {
+    color: #ff8700;
+}
+
+.russell {
+    border-color: #00d2be;
+}
+
+.russell strong {
+    color: #00d2be;
+}
+
+.bortoleto {
+    border-color: #999999;
+}
+
+.bortoleto strong {
+    color: #999999;
+}
+
+/* FILTROS DA CLASSIFICAÇÃO */
+.filtros {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.filtros div {
+    flex: 1;
+}
+
+.filtros label,
+.campo label {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #cccccc;
+    font-weight: 700;
+}
+
+.filtros input,
+.filtros select,
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 10px;
+    background: #0e0e13;
+    border: 1px solid #33333b;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+.filtros button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.filtros button:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+/* TABELA */
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+thead {
+    background: #24242b;
+    color: #bbbbbb;
+}
+
+th {
+    font-size: 10px;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #292930;
+}
+
+tbody tr {
+    background: var(--panel);
+}
+
+tbody tr:first-child {
+    background: #351719;
+}
+
+.posicao {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 2px 7px;
+    font-weight: 900;
+}
+
+.primeiro {
+    background: var(--red);
+    color: white;
+}
+
+/* INGRESSOS */
+.area-ingressos {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.precos > p {
+    font-size: 13px;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.aviso {
+    background: #282315;
+    border-left: 3px solid #ffd000;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.preco-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #292930;
+    font-size: 13px;
+}
+
+.preco-item strong {
+    color: var(--red);
+}
+
+/* FORMULÁRIO */
+.form-ingressos {
+    background: var(--panel);
+    border-top: 3px solid var(--red);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.campo {
+    min-width: 0;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo small {
+    display: block;
+    color: var(--gray);
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.campo input[type="file"] {
+    font-size: 11px;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 75px;
+}
+
+.btn-reservar {
+    grid-column: 1 / -1;
+    background: var(--red);
+    border: none;
+    color: white;
+    padding: 13px;
+    font-family: inherit;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.btn-reservar:hover {
+    background: #b90000;
+}
+
+/* RODAPÉ */
+.rodape {
+    border-top: 1px solid #292930;
+    padding: 20px;
+    text-align: center;
+    color: var(--gray);
+    font-size: 11px;
+}
+
+.rodape strong {
+    color: var(--red);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 700px) {
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .links a {
+        font-size: 10px;
+    }
+
+    .btn-comprar {
+        padding: 9px 12px;
+        font-size: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-conteudo {
+        width: 100%;
+        padding: 35px 5%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-imagem {
+        width: 100%;
+        height: 230px;
+    }
+
+    .hero-imagem img {
+        clip-path: none;
+    }
+
+    .estatisticas {
+        left: 15%;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .grid-pilotos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .area-ingressos {
+        grid-template-columns: 1fr;
+    }
+
+    .form-ingressos {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo,
+    .btn-reservar {
+        grid-column: auto;
+    }
+
+    .secao h2 {
+        font-size: 22px;
+    }
+}
